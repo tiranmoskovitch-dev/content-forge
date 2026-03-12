@@ -1,0 +1,52 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "content-forge"
+version = "1.0.0"
+description = "AI-powered content generation for blogs, social media, emails, and more."
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.9"
+authors = [
+    {name = "Tiran Moskovitch", email = "tiran@tirandev.com"},
+]
+keywords = ["content-generation", "ai-writing", "blog-generator", "copywriting", "content-marketing"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Text Processing",
+]
+dependencies = []
+
+[project.optional-dependencies]
+openai = ["openai>=1.0"]
+anthropic = ["anthropic>=0.18"]
+all = ["openai>=1.0", "anthropic>=0.18"]
+dev = ["pytest>=7.0", "pytest-cov", "ruff"]
+
+[project.urls]
+Homepage = "https://github.com/tiranmoskovitch-dev/content-forge"
+Repository = "https://github.com/tiranmoskovitch-dev/content-forge"
+Issues = "https://github.com/tiranmoskovitch-dev/content-forge/issues"
+
+[project.scripts]
+content-forge = "content_forge.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["content_forge*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
