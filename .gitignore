@@ -1,6 +1,11 @@
 __pycache__/
 *.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
 .env
-*.md
-!README.md
-output/
+.venv/
+venv/
+*.log
+.DS_Store
